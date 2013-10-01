@@ -14,6 +14,15 @@ EXECUTABLES :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 semesterProject \
+lesson12 \
+lesson11 \
+lesson10 \
+lesson09 \
+lesson08 \
+lesson07 \
+lesson06 \
+lesson05 \
+lesson04 \
 lesson03 \
 lesson02 \
 lesson01 \
