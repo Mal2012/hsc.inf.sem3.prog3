@@ -13,14 +13,14 @@ float kugelOberflaeche(float radius){
 
 	float flaeche = (4 * PI * HOCHZWEI(radius));
 
-	return flaeche;
+	return (flaeche);
 }
 
 float kugelVolumen(float radius){
 
 	float volumen =  (float) 4/3 * (PI * HOCHDREI(radius));
 
-	return volumen;
+	return (volumen);
 }
 
 void kugelBerechnungIO(){
@@ -50,14 +50,14 @@ int *bubbleSort(int *zahlen){
 		}
 	}
 
-	return zahlen;
+	return (zahlen);
 }
 
 int berechneMedian(int *zahlen){
 
 	bubbleSort(zahlen);
 
-	return zahlen[2];
+	return (zahlen[2]);
 }
 
 void berechneMedianIO(){
@@ -110,10 +110,10 @@ void knobelei(char **argv) {
 char get(char *bitvec, int index){
 
 	if(index < ARRAY_SIZE){
-	  return bitvec[index/8] & (1 << index%8) ? 1 : 0;
+	  return (bitvec[index/8] & (1 << index%8) ? 1 : 0);
 	}else{
 		printf("ERROR");
-		return -1;
+		return (-1);
 	}
 }
 
@@ -156,7 +156,7 @@ int berechneDatum(int t, int m, int j, int h){
 		}
 	}
 
-	return w;
+	return (w);
 }
 
 void berechneDatumIO(){

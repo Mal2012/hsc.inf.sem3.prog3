@@ -33,21 +33,21 @@ int main(int argc, char **argv) {
 
 	if(kauf_tag <= 0 || kauf_tag > 31){
 		printf("WRONG INPUT");
-		return 0;
+		return (0);
 	}
 	else{
 		printf("Monat: ");
 		scanf("%d", &kauf_monat);
 		if(kauf_monat <= 0 || kauf_monat > 12){
 			printf("WRONG INPUT");
-			return 0;
+			return (0);
 		}else{
 			printf("Jahr: ");
 			scanf("%d", &kauf_jahr);
 
 			if((kauf_tag == 29 && kauf_monat == 2 && !ist_schaltjahr(&kauf_jahr))){
 				printf("WRONG INPUT");
-				return 0;
+				return (0);
 			}
 			else{
 				int result = tage_vergangen(&kauf_tag, &kauf_monat, &kauf_jahr, &jetzt_tag, &jetzt_monat, &jetzt_jahr);
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 					printf("WRONG INPUT");
 				}
 			}
-			return 0;
+			return (0);
 		}
 	}
 }
@@ -67,20 +67,20 @@ int main(int argc, char **argv) {
 int korrekt_input(int *kauf_tag, int *kauf_monat, int *kauf_jahr, int *jetzt_tag, int *jetzt_monat, int *jetzt_jahr){
 
 	if ((*jetzt_tag < *kauf_tag) && (*jetzt_monat < *kauf_monat) && (*jetzt_jahr <= *kauf_jahr)){
-		return FALSE;
+		return (FALSE);
 	}
 	else{
-		return TRUE;
+		return (TRUE);
 	}
 }
 
 int ist_schaltjahr(int *kauf_jahr){
 
 	if((*kauf_jahr % 400) == 0 || ((*kauf_jahr % 4) == 0 && (*kauf_jahr % 100) != 0)){
-		return TRUE;
+		return (TRUE);
 	}
 	else {
-		return FALSE;
+		return (FALSE);
 	}
 }
 
@@ -128,7 +128,7 @@ int tage_vergangen(int *kauf_tag, int *kauf_monat, int *kauf_jahr, int *jetzt_ta
 			tage_berechnet += 1;
 			*kauf_tag += 1;
 		}
-		return tage_berechnet -= 1;
+		return (tage_berechnet -= 1);
 	}else if(*kauf_jahr == *jetzt_jahr){
 		if(ist_schaltjahr(kauf_jahr)){
 			monate[2] = 29;
@@ -149,5 +149,5 @@ int tage_vergangen(int *kauf_tag, int *kauf_monat, int *kauf_jahr, int *jetzt_ta
 			*kauf_tag += 1;
 		}
 	}
-	return tage_berechnet;
+	return (tage_berechnet);
 }

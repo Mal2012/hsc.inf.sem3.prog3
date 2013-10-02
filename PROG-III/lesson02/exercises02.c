@@ -5,15 +5,12 @@
 int countGame(int *z, int *n){
 
 	if(*n > *z){
-		return 1;
+		return (1);
 	}
 	else if(*n < *z){
-		return -1;
+		return (-1);
 	}
-	else{
-		return 0;
-	}
-	return 0;
+	return (0);
 }
 
 void countGameIO() {
@@ -58,21 +55,22 @@ int islandsArray(){
 		y = y + 1;
 	}
 	getchar();
-	return 0;
+
+	return (0);
 }
 
 float fahrenheitToCelsius(float *n){
 
 	float result = (5 * (*n - 32)) / 9;
 
-	return result;
+	return (result);
 }
 
 float celsiusToFahrenheit(float *m){
 
 	float result = ((9 * *m) / 5) + 32;
 
-	return result;
+	return (result);
 }
 
 
@@ -99,4 +97,3 @@ void compilerTest(){
 	printf("%1f\n", a  / b * c);
 	printf("%1f\n", (1 / (c / a * b)));
 }
-

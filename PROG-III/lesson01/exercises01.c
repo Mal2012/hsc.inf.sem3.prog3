@@ -62,7 +62,7 @@ void test3(){
   printf("Das war's fuer heute\n");
 }
 
-void printascii(vodi){
+void printascii(void){
 
 	int i;
 
