@@ -8,7 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include semesterProject/subdir.mk
+-include semesterProjectC/subdir.mk
 -include lesson12/subdir.mk
 -include lesson11/subdir.mk
 -include lesson10/subdir.mk

@@ -13,7 +13,7 @@ EXECUTABLES :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-semesterProject \
+semesterProjectC \
 lesson12 \
 lesson11 \
 lesson10 \
