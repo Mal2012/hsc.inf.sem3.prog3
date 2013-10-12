@@ -2,13 +2,13 @@
 
 void typesize(void){
 
-    printf("short int: %d\n", sizeof(short int));
-    printf("int: %i\n", sizeof(int));
-    printf("long int: %i\n", sizeof(long int));
-    printf("long long: %d\n", sizeof(long long));
-    printf("float: %d\n", sizeof(float));
-    printf("double: %d\n", sizeof(double));
-    printf("long double: %d\n", sizeof(long double));
+//    printf("short int: %d\n", sizeof(int));
+//    printf("int: %i\n", sizeof(int));
+//    printf("long int: %i\n", sizeof(long int));
+//    printf("long long: %d\n", sizeof(long long));
+//    printf("float: %d\n", sizeof(float));
+//    printf("double: %d\n", sizeof(double));
+//    printf("long double: %d\n", sizeof(long double));
 }
 
 void printperson(void){
@@ -22,7 +22,7 @@ void chars(void){
 
    char c = 'x'; // x wird bei %d als int ausgewertet -> 4 Bytes statt 1 Byte
 
-   printf("char-Konst.: %d Bytes, char-Var: %d, int: %d Bytes\n", sizeof('x'), sizeof(c), sizeof(10));
+//   printf("char-Konst.: %d Bytes, char-Var: %d, int: %d Bytes\n", sizeof('x'), sizeof(c), sizeof(10));
    printf("Inhalt der char-Var.: %c, int-Konstante: %i\n", c, 10);
 }
 
