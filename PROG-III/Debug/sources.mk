@@ -25,5 +25,5 @@ lesson05 \
 lesson04 \
 lesson03 \
 lesson02 \
-lesson01 \
+exercises_in_c \
 

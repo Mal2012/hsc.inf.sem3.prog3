@@ -20,7 +20,7 @@ RM := rm -rf
 -include lesson04/subdir.mk
 -include lesson03/subdir.mk
 -include lesson02/subdir.mk
--include lesson01/subdir.mk
+-include exercises_in_c/subdir.mk
 -include subdir.mk
 -include objects.mk
 
