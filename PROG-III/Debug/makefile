@@ -9,17 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include semesterProjectC/subdir.mk
--include lesson12/subdir.mk
--include lesson11/subdir.mk
--include lesson10/subdir.mk
--include lesson09/subdir.mk
--include lesson08/subdir.mk
--include lesson07/subdir.mk
--include lesson06/subdir.mk
--include lesson05/subdir.mk
--include lesson04/subdir.mk
 -include lesson03/subdir.mk
--include lesson02/subdir.mk
 -include exercises_in_c/subdir.mk
 -include subdir.mk
 -include objects.mk

@@ -4,15 +4,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../lesson03/count_days.c \
 ../lesson03/exercises03.c 
 
 OBJS += \
-./lesson03/count_days.o \
 ./lesson03/exercises03.o 
 
 C_DEPS += \
-./lesson03/count_days.d \
 ./lesson03/exercises03.d 
 
 

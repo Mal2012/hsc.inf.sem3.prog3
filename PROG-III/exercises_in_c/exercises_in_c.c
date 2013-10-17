@@ -163,29 +163,86 @@ int exercise10(void){
 
 int exercise11(void){
 
-	int n = 3, k = 4;
-	float a = 0, b = 3.2;
-	int m;
-	char c, e = 1;
+	/* int n = 3, k = 4;
+	 * float a = 0, b = 3.2;
+	 * int m;
+	 * char c, e = 1;
+	 */
 
 	/* = 3, da n % 2 != 0 -> FALSE => 2. Anweisung ausführen */
-	m = (n % 2) ? (-1 + n) : (n);
+	/* m = (n % 2) ? (-1 + n) : (n); */
 
 	/* = 0, da '/' und '*' gleiche Priorität haben -> Links -> Rechts => 1/2 = 0 * x = 0 */
-	a = (1 / 2) * b;
+	/* a = (1 / 2) * b; */
 
 	/* TRUE da: 1. left_shift um 3 Stellen => 8, 4 < 8 => TRUE */
-	c = 4 < 1 << n;
+	/* c = 4 < 1 << n; */
 
 	/*1 / 1 / 3.2 + 0 = 1 / 3.2 = 0.3125 */
-	c = 1/e/b+a;
+	/* c = 1/e/b+a; */
 
 	return (0);
 }
 
-int exercise12(void){
+int exercise12(unsigned char c, int n){
 
-	// TODO
+	int digit, i;
+
+	printf("Binärformat: ");
+	for(i = 0; i <= 7; i++){
+		digit = (c >> (7 - i)) & 0x01;
+		printf("%d", digit);
+	}
+	n = n % 8;
+	for(i = 1; i <= n; i++){
+		if(c >= 128){
+			c = (c << 1)+1;
+		}
+		else{
+			c = c << 1;
+		}
+	}
+	printf("\n");
+	printf("Binärformat: ");
+	for(i = 0; i <= 7; i++){
+		digit = (c >> (7 - i)) & 0x01;
+		printf("%d", digit);
+	}
+	return (0);
+}
+
+int exercise13(void){
+
+	/*
+	 * int a = 10, b, c;
+	 *
+	 * a *= 5 + 10 => a = a * (5 + 10) = 150
+	 * a *= b = c = 20 => a = a * (b = (c = 20)) = 3000
+	 * b = b == c => b = (b == c) => b = (b == c) ? 1 : 0 => 1
+	 * a >>= b + 2 => a = a >> (b + 2) => a >> 3 -> 3000 >> 3 = 3000 : 2^3 = 375
+	 * a &= 0x3e => 375 = 101110111 & 000111110 => 000110110 = 54
+	 * a = 3; b = 2;
+	 * a *= b += a <<= a + b => a = a << (a + b) => b = b + a; a = a* b; => a = 9408, b = 98
+	 */
+
+	int a = 4;
+	double b = 8;
+	int c = b;
+
+	printf("%lf\n", a*b/c);
+	printf("%lf\n", a/c*b);
+	printf("%lf\n", a/b*c);
+	printf("%lf\n", 1/(c/a*b));
+
+	return (0);
+}
+
+int exercise14(void){
+
+	return (0);
+}
+
+int main(void){
 
 	return (0);
 }

@@ -17,7 +17,7 @@
 const int TRUE = 1;
 const int FALSE = 0;
 
-int main(int argc, char **argv) {
+int maim/* n */(int argc, char **argv) {
 
 	time_t my_time = time(0);
 	struct tm * jetzt = localtime( &my_time );
