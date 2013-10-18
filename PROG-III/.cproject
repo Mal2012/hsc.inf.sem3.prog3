@@ -47,9 +47,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="semesterProjectC|lesson10|lesson06|lesson12|lesson04|exercises_in_c|lesson08|lesson02|lesson11|lesson05|lesson03|lesson09|lesson07" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="semesterProjectC|lesson06|lesson10|exercises_in_c|lesson04|lesson12|lesson08|lesson02|lesson05|lesson11|lesson03|lesson09|lesson07" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="exercises_in_c"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lesson03"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="semesterProjectC"/>
 					</sourceEntries>
 				</configuration>
@@ -99,7 +98,6 @@
 					<sourceEntries>
 						<entry excluding="semesterProjectC|lesson10|lesson06|lesson12|lesson04|exercises_in_c|lesson08|lesson02|lesson11|lesson05|lesson03|lesson09|lesson07" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="exercises_in_c"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lesson03"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="semesterProjectC"/>
 					</sourceEntries>
 				</configuration>

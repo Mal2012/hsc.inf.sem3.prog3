@@ -9,9 +9,47 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define ARRSIZE 24
 #define PI 3.1415927
 #define HOCHZWEI(wert) ((wert) * (wert))
 #define HOCHDREI(wert) ((wert) * (wert) * (wert))
+#define SWAP(wert1, wert2, typ) { typ tmp = wert1; wert1 = wert2; wert2 = tmp; }
+
+//void knobelei(char **argv) {
+//
+//	char *z;
+//	char code[] = "SKIANZUG";
+//
+//	z = *++argv;
+//	z += 4;
+//
+//	while(*z - '7'){
+//		printf("%c", code[*z-- - '0']);
+//	}
+//	printf("\n");
+//}
+
+/*
+ * S K I A N Z U G  -> Ergebnis: 51, 52, 54, 55 -> 1 3 4 6
+ * char *argv = {'7' '6' '4' '3' '1' '2' '3'}
+ * char *code = {'S' 'K' 'I' 'A' 'N' 'Z' 'U' 'G' }
+ * char *z = *++argv; => 0.Zeihen des 1. Arguments [0. Argument: Name d. Programms] => 7
+ * z = z + 4; => '1'
+ * while(1 - '7' != 0)
+ * -> argv[4] = 1 => 1 - 0 = 49 - 48 = 1 => code[1] = K, z--
+ * z = 3 => '3'
+ * while(3 - 7 != 0)
+ * -> argv[3] = 3 => 3 - 0 = 51 - 48 = 3 => code[3] = A, z--
+ * z = 2 => '4'
+ * while(4 - 7 != 0)
+ * -> argv[2] = 4 => 4 - 0 = 52 - 48 = 4 => code[4] = N, z--
+ * z= 1 => '6'
+ * while(6 - 7 != 0)
+ * -> argv[1] = 6 => 6 - 0 = 54 - 48 = 6 => code[6] = U, z--
+ * z = 0 => '7'
+ * while(7 - 7 != 0)
+ * -> abbruch => KANU
+ */
 
 
 int exercise01(void){
@@ -237,8 +275,151 @@ int exercise13(void){
 	return (0);
 }
 
+int ist_schaltjahr(int *kauf_jahr){
+
+	if((*kauf_jahr % 400) == 0 || ((*kauf_jahr % 4) == 0 && (*kauf_jahr % 100) != 0)){
+		return (1);
+	}
+	else {
+		return (0);
+	}
+}
+
 int exercise14(void){
 
+	int jahr, monat, tag;
+	int monate[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	printf("Bitte den Tag eingeben");
+	scanf("%d", &tag);
+
+	printf("Bitte Monat eingeben: ");
+	scanf("%d", &monat);
+
+	printf("Bitte Jahr eingeben: ");
+	scanf("%d", &jahr);
+
+	if(ist_schaltjahr(&jahr)){
+		monate[2] = 29;
+	}
+
+	int i, tmp;
+/*
+ * 1.1.2000
+ */
+	if(monat == 1){
+		printf("%d", tag);
+		return (0);
+	}
+	else{
+		for(i = 1; i < monat; i++){
+			tmp += monate[i];
+		}
+		printf("%d", tmp + tag);
+		return (0);
+	}
+}
+
+int exercise15(void){
+
+	int n, j, i, c = 5;
+	int zahlen[5];
+
+	for(i = 0; i < 5; i++){
+		printf("Geben Sie noch %d Zahlen ein: ", c--);
+		scanf("%d", &zahlen[i]);
+	}
+
+	for(n = 5; n > 1; n--){
+		for(j = 0; j < n - 1; j++){
+			if(zahlen[j] > zahlen[j + 1]){
+				SWAP(zahlen[j], zahlen[j + 1], int);
+			}
+		}
+	}
+	printf("%d", zahlen[2]);
+
+	return (0);
+}
+
+// TODO
+
+//char exercise16_get(char *bitvec, int index){
+//
+//	if(index < ARRSIZE){
+//	  return (bitvec[index/8] & (1 << index%8) ? 1 : 0);
+//	}else{
+//		printf("ERROR");
+//		return (-1);
+//	}
+//}
+//
+//void exercise16_set(char *bitvec, int index){
+//
+//	if(index < ARRSIZE){
+//		bitvec[index / 8] |= (1 << index % 8);
+//	}
+//	else{
+//		printf("ERROR");
+//	}
+//}
+//
+//void exercise16_reset(char *bitvec, int index){
+//
+//	if(index < ARRSIZE){
+//		bitvec[index / 8] &= (1 << index % 8);
+//	}
+//}
+
+int exercise17(void){
+
+	int t, m, j, h;
+
+	printf("Tag: ");
+	scanf("%d", &t);
+	printf("Monat: ");
+	scanf("%d", &m);
+	printf("Jahr: ");
+	scanf("%d", &j);
+
+	int w;
+
+	if(m == 1){
+		m = 13;
+		j -= 1;
+	}
+	else if(m == 2){
+		m = 14;
+		j -= 1;
+	}
+	h = j / 100;
+	j %= 100;
+
+	w = ((t + (((m + 1) * 26) / 10) + ((5 * j) / 4) + (h / 4) - (2 * h) - 1) % 7);
+
+	if(w < 0){
+		while(w < 0){
+			w+= 7;
+		}
+	}
+	switch(w){
+		case 0 : printf("Sonntag");
+			break;
+		case 1 : printf("Montag");
+			break;
+		case 2 : printf("Dienstag");
+			break;
+		case 3 : printf("Mittwoch");
+			break;
+		case 4 : printf("Donnerstag");
+			break;
+		case 5 : printf("Freitag");
+			break;
+		case 6 : printf("Samstag");
+			break;
+		default:
+			printf("ERROR");
+	}
 	return (0);
 }
 
