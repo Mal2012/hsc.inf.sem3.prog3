@@ -33,7 +33,7 @@
  * S K I A N Z U G  -> Ergebnis: 51, 52, 54, 55 -> 1 3 4 6
  * char *argv = {'7' '6' '4' '3' '1' '2' '3'}
  * char *code = {'S' 'K' 'I' 'A' 'N' 'Z' 'U' 'G' }
- * char *z = *++argv; => 0.Zeihen des 1. Arguments [0. Argument: Name d. Programms] => 7
+ * char *z = *++argv; => 0.Zeichen des 1. Arguments [0. Argument: Name d. Programms] => 7
  * z = z + 4; => '1'
  * while(1 - '7' != 0)
  * -> argv[4] = 1 => 1 - 0 = 49 - 48 = 1 => code[1] = K, z--
@@ -226,6 +226,10 @@ int exercise12(unsigned char c, int n){
 
 	int digit, i;
 
+	/*
+	 * digit =
+	 *
+	 */
 	printf("Binärformat: ");
 	for(i = 0; i <= 7; i++){
 		digit = (c >> (7 - i)) & 0x01;
